@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../listtodo/todolist.dart';
 
 class HomePage extends StatefulWidget {
    const HomePage ({super.key});
@@ -17,7 +18,19 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
       ),
       body: ListView(
+        children: [
+        ToDolist(
+          taskName: "xxx",
+          taskCompleted: true,
+          onChanged: (p0) {},
+        ),
+         ToDolist(
+          taskName: "xxx",
+          taskCompleted: false,
+          onChanged: (p0) {},
+        ),
         
+        ]
        ),
 
     );
