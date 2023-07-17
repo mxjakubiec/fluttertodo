@@ -46,6 +46,14 @@ class _HomePageState extends State<HomePage> {
 
     },);
   }
+  // delete task
+  void deleteTask(int index) {
+    setState(() {
+      toDoList.removeAt(index);
+    });
+
+  }
+
 
 
   @override
@@ -61,7 +69,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder( 
         itemCount: toDoList.length,
         itemBuilder: (context, index) {
-          return ToDolist(onChanged:(value) => checkBoxChanged(value, index) , taskCompleted: toDoList[index][1], taskName: toDoList[index][0]);
+          return ToDolist(onChanged:(value) => checkBoxChanged(value, index) , taskCompleted: toDoList[index][1], taskName: toDoList[index][0], deleteFunction: (context) => deleteTask(index),);
         }, 
        ),
 
