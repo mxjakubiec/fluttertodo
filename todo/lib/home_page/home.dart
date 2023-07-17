@@ -4,12 +4,17 @@ import '../listtodo/todolist.dart';
 
 class HomePage extends StatefulWidget {
    const HomePage ({super.key});
+   
 
   @override 
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  //text controller
+  final  _controller = TextEditingController();
+
+
   //list
   List toDoList = [
   ["Silownia", false],
@@ -24,11 +29,20 @@ class _HomePageState extends State<HomePage> {
    
 
   }
+  // save new task
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([_controller.text, false]);
+      _controller.clear();
+    });
+    Navigator.of(context).pop();
+  }
 
   // new task add
   void newTaskAdd(){
     showDialog(context: context, builder: (context){
-      return DialogBox();
+     return DialogBox(controller: _controller,
+     onSave: saveNewTask, onCancel: () => Navigator.of(context).pop(),);
 
     },);
   }
