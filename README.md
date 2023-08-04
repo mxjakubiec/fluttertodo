@@ -1,4 +1,4 @@
-# Zadanie rekrutacyjne: Aplikacja ToDo na Fluttera
+#  Aplikacja ToDo na Fluttera
 Projekt prostej aplikacji todo
 
 Celem tego zadania jest stworzenie prostej aplikacji ToDo na platformę Flutter.
